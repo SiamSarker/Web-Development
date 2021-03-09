@@ -58,3 +58,15 @@ function prev()
         imgTag.src = photos[count];
 
 }
+
+function addStyle()
+{
+    document.querySelector("#paraID1").classList.add("para-style");
+    document.querySelector("#paraID2").classList.add("para-style2");
+}
+
+function removeStyle()
+{
+    document.querySelector("#paraID1").classList.remove("para-style");
+    document.querySelector("#paraID2").classList.remove("para-style2");
+}
