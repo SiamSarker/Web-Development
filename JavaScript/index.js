@@ -28,3 +28,33 @@ function myPicture1(){
 function myPicture2(){
         myPic.src = "Images/siam2.jpg"
 }
+
+
+var photos = ["Images/siam1.jpg","Images/siam2.jpg","Images/siam3.jpg"];
+var imgTag = document.querySelector("#scrollpic");
+
+var count = 0;
+function next()
+{
+    count++;
+    if(count>=photos.length)
+    {
+        count = 0;
+        imgTag.src = photos[count];    
+    }
+    else
+        imgTag.src = photos[count];
+}
+
+function prev()
+{
+    count--;
+    if(count < 0)
+    {
+        count = photos.length - 1;
+        imgTag.src = photos[count];    
+    }
+    else
+        imgTag.src = photos[count];
+
+}
