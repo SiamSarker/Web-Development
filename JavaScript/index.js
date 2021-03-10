@@ -13,7 +13,7 @@ h1.addEventListener("mouseout", function(){
 });
 
 
-document.getElementById("h2").innerHTML = "Good Bye"
+document.getElementById("h2").innerHTML = "Listen to music by clicking.."
 
 // document.getElementById("p").innerHTML = 'This is Siam Sarker' # for id  . for class 
 
@@ -78,4 +78,16 @@ function removeStyle()
 {
     document.querySelector("#paraID1").classList.remove("para-style");
     document.querySelector("#paraID2").classList.remove("para-style2");
+}
+
+var songs = document.querySelectorAll(".mymusic");
+
+for (var i = 0; i < songs.length; i++)
+{
+    songs[i].addEventListener("click", function (){
+        var name = this.innerHTML;
+        console.log(name);
+        var audio = new Audio("mymusic/"+name+".mp3");
+        audio.play();
+    });
 }

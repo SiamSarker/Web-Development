@@ -20,3 +20,14 @@
     font-size: 3rem;
     font-weight: bold;
 }
+
+.mymusic
+{
+    color: tomato;
+    font-size: large;
+    font-weight: bold;
+    background-color:aliceblue;
+    margin: 5px;
+    height: auto;
+    width: auto;
+}
