@@ -17,7 +17,13 @@ document.getElementById("h2").innerHTML = "Listen to music by clicking.."
 
 // document.getElementById("p").innerHTML = 'This is Siam Sarker' # for id  . for class 
 
-document.querySelector("#pi").innerHTML = "Hello There";
+document.addEventListener("keypress", function(event){
+    var text = event.key;
+    document.querySelector("#pi").classList.add("para-style");
+    document.querySelector("#pi").innerHTML = "You Have Pressed "+text;
+})
+
+
 
 
 var myVar = document.querySelector("#pid");
