@@ -89,5 +89,14 @@ for (var i = 0; i < songs.length; i++)
         console.log(name);
         var audio = new Audio("mymusic/"+name+".mp3");
         audio.play();
+
+        document.querySelector("."+name).classList.add("anim");
+        
+        setTimeout(function(){
+            document.querySelector("."+name).classList.remove("anim");
+        }, 1000);
+
+        
+
     });
 }

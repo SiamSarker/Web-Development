@@ -31,3 +31,9 @@
     height: auto;
     width: auto;
 }
+
+.anim
+{
+    box-shadow: 0 15px 10px 0 tomato;
+    opacity: 0.5;
+}
