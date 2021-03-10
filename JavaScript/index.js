@@ -3,7 +3,16 @@
 // getElementdbyClassName()
 // querySelector()
 
-document.getElementById("h1").innerHTML = "Hello World"
+var h1 = document.getElementById("h1");
+h1.innerHTML = "Hello World"
+h1.addEventListener("mouseover", function(){
+    h1.classList.add("h1-style");
+});
+h1.addEventListener("mouseout", function(){
+    h1.classList.remove("h1-style");
+});
+
+
 document.getElementById("h2").innerHTML = "Good Bye"
 
 // document.getElementById("p").innerHTML = 'This is Siam Sarker' # for id  . for class 
