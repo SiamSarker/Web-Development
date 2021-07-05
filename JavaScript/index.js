@@ -86,6 +86,9 @@ function removeStyle()
     document.querySelector("#paraID2").classList.remove("para-style2");
 }
 
+
+// test
+
 var songs = document.querySelectorAll(".mymusic");
 
 for (var i = 0; i < songs.length; i++)
