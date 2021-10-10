@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <title>Press Button</title>
+</head>
+
+<body>
+    <div>
+        <h1 id="pressed"></h1>
+    </div>
+
+
+    <button onclick="up()">Up</button>
+    <button onclick="down()">Down</button>
+    <button onclick="left()">Left</button>
+    <button onclick="right()">Right</button>
+
+    <script>
+        function up() {
+            document.getElementById("pressed").innerHTML = "UP Pressed";
+        }
+        function down() {
+            document.getElementById("pressed").innerHTML = "DOWN Pressed";
+        }
+        function left() {
+            document.getElementById("pressed").innerHTML = "LEFT Pressed";
+        }
+        function right() {
+            document.getElementById("pressed").innerHTML = "Right Pressed";
+        }
+
+        window.addEventListener("keydown", function (event) {
+            if (event.defaultPrevented) {
+                return; // Do nothing if the event was already processed
+            }
+
+            switch (event.key) {
+                case "ArrowDown":
+                    // code for "down arrow" key press.
+                    document.getElementById("pressed").innerHTML = "DOWN Pressed";
+                    break;
+                case "ArrowUp":
+                    // code for "up arrow" key press.
+                    document.getElementById("pressed").innerHTML = "UP Pressed";
+                    break;
+                case "ArrowLeft":
+                    // code for "left arrow" key press.
+                    document.getElementById("pressed").innerHTML = "LEFT Pressed";
+                    break;
+                case "ArrowRight":
+                    // code for "right arrow" key press.
+                    document.getElementById("pressed").innerHTML = "RIGHT Pressed";
+                    break;
+                default:
+                    return; // Quit when this doesn't handle the key event.
+            }
+
+            // Cancel the default action to avoid it being handled twice
+            event.preventDefault();
+        }, true);
+          // the last option dispatches the event to the listener first,
+          // then dispatches event to window
+    </script>
+
+
+</body>
+
+</html>
