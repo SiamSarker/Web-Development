@@ -1,7 +1,4 @@
-// getElementbyId()
-// getElementsbyTagName()
-// getElementdbyClassName()
-// querySelector()
+
 
 var h1 = document.getElementById("h1");
 h1.innerHTML = "Hello World"
@@ -91,9 +88,9 @@ function removeStyle()
 
 var songs = document.querySelectorAll(".mymusic");
 
-for (var i = 0; i < songs.length; i++)
+for (let song of songs)
 {
-    songs[i].addEventListener("click", function (){
+    song.addEventListener("click", function (){
         var name = this.innerHTML;
         console.log(name);
         var audio = new Audio("mymusic/"+name+".mp3");
