@@ -13,7 +13,7 @@
     <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
     <script>
         var xValues = [1, 2, 3, 4, 5];
-        var yValues = [3, 4];
+        var yValues = [0.0];
 
         console.log(yValues);
 
@@ -46,7 +46,7 @@
 
     <script>
         function increment(increment) {
-            let value = parseInt(increment);
+            let value = parseFloat(increment);
             if(yValues.length == 5){
                 yValues.shift();
                 yValues.push(value);
