@@ -43,7 +43,7 @@ body::after{
 .container .card{
     position: relative;
     width: 500px;
-    height: 280px;
+    height: 300px;
     margin: 20px;
     box-shadow:20px 20px 50px rgba(0,0,0,0.5);
     background: rgba(255, 255, 255, 0.1);
@@ -67,11 +67,22 @@ body::after{
     right: 30px;
     font-size: 1.5rem;
     font-weight: 800;
-    color: rgba(255, 255, 255, 0.116);
+    color: rgba(255, 255, 255);
     pointer-events: none;
 }
 
-.container .card .content h5{
+.container .card .content h1{
+    position: center;
+    top: 10px;
+    right: 30px;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: rgba(255, 255, 255);
+    pointer-events: none;
+}
+
+
+.container .card .content h3{
     font-size: 1rem;
     color: white;
     font-weight: 700;
@@ -79,8 +90,8 @@ body::after{
 
 .container .card .content .top{
     padding: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.116);
-    color: rgba(255, 255, 255, 0.116);
+    border: 1px solid rgba(0, 255, 17);
+    color: rgba(255, 0, 0);
     transform: rotate(270deg);
     font-family: 'Nanum Gothic', sans-serif;
     border-radius: 10px;
@@ -88,8 +99,8 @@ body::after{
 }
 .container .card .content .left{
     padding: 10px;
-    color: rgba(255, 255, 255, 0.116);
-    border: 1px solid rgba(255, 255, 255, 0.116);
+    border: 1px solid rgba(0, 255, 17);
+    color: rgba(255, 0, 0);
     font-family: 'Nanum Gothic', sans-serif;
     border-radius: 10px;
     position: relative;
@@ -99,8 +110,8 @@ body::after{
 }
 .container .card .content .right{
     padding: 10px;
-    color: rgba(255, 255, 255, 0.116);
-    border: 1px solid rgba(255, 255, 255, 0.116);
+    border: 1px solid rgba(0, 255, 17);
+    color: rgba(255, 0, 0);
     border-radius: 10px;
     font-family: 'Nanum Gothic', sans-serif;
     position:relative;
@@ -110,8 +121,8 @@ body::after{
 }
 .container .card .content .down{
     padding: 10px;
-    color: rgba(255, 255, 255, 0.116);
-    border: 1px solid rgba(255, 255, 255, 0.116);
+    border: 1px solid rgba(0, 255, 17);
+    color: rgba(255, 0, 0);
     transform: rotate(90deg);
     border-radius: 10px;
     font-family: 'Nanum Gothic', sans-serif;
