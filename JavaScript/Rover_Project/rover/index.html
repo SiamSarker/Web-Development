@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+	<title>Dashboard</title>
+</head>
+<body>
+	<div class="container">
+		<div class="card">
+			<div class="content">
+
+				<h2>DATA</h2>
+				
+				<h3>Sensor Values: <span class="value-x" id="value-x"></span></h3>
+				<br>
+				<h3><span class="value-y" id="value-y"></span></h3>
+				
+			</div>
+		</div>
+
+		<div class="card">
+			<div class="content">
+
+				<h2>GRAPH</h2>
+				<br><br>
+
+				<canvas id="myChart" style="width:100%;max-width:700px"></canvas>
+				
+				<script>
+					var xValues = [1, 2, 3, 4, 5];
+					var yValues = [0.0];
+			
+					console.log(yValues);
+					document.getElementById("value-y").innerHTML = yValues;
+			
+			
+					new Chart("myChart", {
+						type: "line",
+						data: {
+							labels: xValues,
+							datasets: [{
+								fill: false,
+								lineTension: 0,
+								backgroundColor: "rgba(255, 255, 2555 , .5)",
+								borderColor: "rgba(255, 255, 2555 , .25)",
+								data: yValues
+							}]
+						},
+						options: {
+							legend: { display: false },
+							scales: {
+								yAxes: [{ ticks: { min: 0 } }],
+							}
+						}
+					});
+				</script>
+			
+			
+			
+				<input type="text" id="text">
+				<button type="button" onclick="increment(document.getElementById('text').value)">Submit</button>
+			
+				<script>
+					function increment(increment) {
+						let value = parseFloat(increment);
+						if(yValues.length == 5){
+							yValues.shift();
+							yValues.push(value);
+						}
+						else{
+							yValues.push(value);
+						}
+
+						document.getElementById("value-y").innerHTML = yValues;
+			
+					 
+						
+						new Chart("myChart", {
+							type: "line",
+							data: {
+								labels: xValues,
+								datasets: [{
+									fill: false,
+									lineTension: 0,
+									backgroundColor: "rgba(255, 255, 2555 , .5)",
+									borderColor: "rgba(255, 255, 2555 ,0.25)",
+									data: yValues
+								}]
+							},
+							options: {
+								legend: { display: false },
+								scales: {
+									yAxes: [{ ticks: { min: 0 } }],
+								}
+							}
+						});
+					}
+			
+				</script>
+			</div>
+		</div>
+
+		<div class="card">
+			<div class="content">
+				<h2>MOVEMENT</h2>
+				<h5 class="top" id="top">>></h5>
+				<div class="left-rigt">
+					<h5 class="left" id="left"><<</h5>
+					<h5 class="right" id="right">>></h5>
+				</div>
+				<h5 class="down" id="down">>></h5>
+			</div>
+		</div>
+
+
+	 
+<!-- 
+		<div class="card">
+			<div class="content">
+				<h2>ACTION</h2>
+
+				<h1 id="pressed">Press from keyboard</h1>
+
+				<script>
+				document.addEventListener("keydown", function (event) {
+					if (event.defaultPrevented) {
+						return; // Do nothing if the event was already processed
+					}
+		
+					switch (event.key) {
+						case "ArrowDown":
+							// code for "down arrow" key press.
+							document.getElementById("pressed").innerHTML = "DOWN Pressed";
+							document.getElementById("down").innerHTML = ">>";
+							document.getElementById("left").innerHTML = "";
+							document.getElementById("right").innerHTML = "";
+							document.getElementById("top").innerHTML = "";
+							break;
+						case "ArrowUp":
+							// code for "up arrow" key press.
+							document.getElementById("pressed").innerHTML = "UP Pressed";
+							document.getElementById("down").innerHTML = "";
+							document.getElementById("left").innerHTML = "";
+							document.getElementById("right").innerHTML = "";
+							document.getElementById("top").innerHTML = ">>";
+							break;
+						case "ArrowLeft":
+							// code for "left arrow" key press.
+							document.getElementById("pressed").innerHTML = "LEFT Pressed";
+							document.getElementById("down").innerHTML = "";
+							document.getElementById("left").innerHTML = "<<";
+							document.getElementById("right").innerHTML = "";
+							document.getElementById("top").innerHTML = "";
+							break;
+						case "ArrowRight":
+							// code for "right arrow" key press.
+							document.getElementById("pressed").innerHTML = "RIGHT Pressed";
+							document.getElementById("down").innerHTML = "";
+							document.getElementById("left").innerHTML = "";
+							document.getElementById("right").innerHTML = ">>";
+							document.getElementById("top").innerHTML = "";
+							break;
+						default:
+							return; // Quit when this doesn't handle the key event.
+					}
+		
+					// Cancel the default action to avoid it being handled twice
+					event.preventDefault();
+				}, true);
+			</script>
+			</div>
+		</div>
+
+		<div class="card">
+			<div class="content">
+				<h2>GRAPH</h2>
+				<br><br>
+
+				<canvas id="myChart" style="width:100%;max-width:700px"></canvas>
+				
+				<script>
+					var xValues = [1, 2, 3, 4, 5];
+					var yValues = [0.0];
+			
+					console.log(yValues);
+					document.getElementById("value-y").innerHTML = yValues;
+			
+			
+					new Chart("myChart", {
+						type: "line",
+						data: {
+							labels: xValues,
+							datasets: [{
+								fill: false,
+								lineTension: 0,
+								backgroundColor: "rgba(255, 255, 2555 , .5)",
+								borderColor: "rgba(255, 255, 2555 , .25)",
+								data: yValues
+							}]
+						},
+						options: {
+							legend: { display: false },
+							scales: {
+								yAxes: [{ ticks: { min: 0 } }],
+							}
+						}
+					});
+				</script>
+			
+			
+			
+				<input type="text" id="text">
+				<button type="button" onclick="increment(document.getElementById('text').value)">Submit</button>
+			
+				<script>
+					function increment(increment) {
+						let value = parseFloat(increment);
+						if(yValues.length == 5){
+							yValues.shift();
+							yValues.push(value);
+						}
+						else{
+							yValues.push(value);
+						}
+
+						document.getElementById("value-y").innerHTML = yValues;
+			
+					 
+						
+						new Chart("myChart", {
+							type: "line",
+							data: {
+								labels: xValues,
+								datasets: [{
+									fill: false,
+									lineTension: 0,
+									backgroundColor: "rgba(255, 255, 2555 , .5)",
+									borderColor: "rgba(255, 255, 2555 ,0.25)",
+									data: yValues
+								}]
+							},
+							options: {
+								legend: { display: false },
+								scales: {
+									yAxes: [{ ticks: { min: 0 } }],
+								}
+							}
+						});
+					}
+			
+				</script>
+			</div>
+		</div>  -->
+
+		<div class="container">
+			<div class="table">
+			
+				<table>
+					<tr>
+					  <th>Time</th>
+					  <th>GPS Data</th>
+					  <th>Accelerometer</th>
+					 
+					</tr>
+					<tr>
+					  <td>20:22</td>
+					  <td>3</td>
+					  <td>6</td>
+					 
+					</tr>
+					<tr>
+					  <td>12:11</td>
+					  <td>1</td>
+					  <td>4</td>
+					 
+					</tr>
+					<tr>
+					  <td>2:12</td>
+					  <td>3</td>
+					  <td>6</td>
+					  
+					</tr>
+					<tr>
+					  <td>12:11</td>
+					  <td>5</td>
+					  <td>2</td>
+					 
+					</tr>
+
+				  </table>
+				  
+				  
+
+				</div>
+		</div>
+
+	</div>
+
+		
+	
+	
+</body>
+</html>

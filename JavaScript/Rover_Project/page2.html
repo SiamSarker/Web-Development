@@ -14,54 +14,124 @@
     </div>
 
 
-    <button onclick="up()">Up</button>
-    <button onclick="down()">Down</button>
-    <button onclick="left()">Left</button>
-    <button onclick="right()">Right</button>
+    <button onclick="up1()">Up</button>
+    <button onclick="down1()">Down</button>
+    <button onclick="left1()">Left</button>
+    <button onclick="right1()">Right</button>
 
     <script>
-        function up() {
+        function up1() {
             document.getElementById("pressed").innerHTML = "UP Pressed";
         }
-        function down() {
+        function down1() {
             document.getElementById("pressed").innerHTML = "DOWN Pressed";
         }
-        function left() {
+        function left1() {
             document.getElementById("pressed").innerHTML = "LEFT Pressed";
         }
-        function right() {
+        function right1() {
             document.getElementById("pressed").innerHTML = "Right Pressed";
         }
 
-        document.addEventListener("keydown", function (event) {
-            if (event.defaultPrevented) {
-                return; // Do nothing if the event was already processed
-            }
+        let up = false;
+        let down = false;
+        let left = false;
+        let right = false;
+
+        while(true)
+        {
+            console.log("hello there");
+            document.addEventListener("keydown", function (event)
+            {
+                switch (event.key) {
+                    case "ArrowDown":
+                        // code for "down arrow" key press.
+                        document.getElementById("pressed").innerHTML = "DOWN Pressed";
+                        down = true;
+                        console.log(down);
+                        
+                       
+    
+                    case "ArrowUp":
+                        // code for "up arrow" key press.
+                        document.getElementById("pressed").innerHTML = "UP Pressed";
+                        up = true;
+                        console.log(up);
+                        
+                        
+    
+                    case "ArrowLeft":
+                        // code for "left arrow" key press.
+                        document.getElementById("pressed").innerHTML = "LEFT Pressed";
+                        left = true;
+                        console.log(left);
+                        
+    
+                    case "ArrowRight":
+                        // code for "right arrow" key press.
+                        document.getElementById("pressed").innerHTML = "RIGHT Pressed";
+                        right = true;
+                        console.log(right);
+                        
+    
+                    default:
+                        console.log("hi");
+                        up = false;
+                        down = false;
+                        left = false;
+                        right = false;
+                        console.log(up);
+                }
+            }, true);
+        }
+    
+
+        /*document.addEventListener("keydown", function (event) {
 
             switch (event.key) {
                 case "ArrowDown":
                     // code for "down arrow" key press.
                     document.getElementById("pressed").innerHTML = "DOWN Pressed";
+                    down = true;
+                    console.log(down);
                     break;
+                   
+
                 case "ArrowUp":
                     // code for "up arrow" key press.
                     document.getElementById("pressed").innerHTML = "UP Pressed";
+                    up = true;
+                    console.log(up);
                     break;
+                    
+
                 case "ArrowLeft":
                     // code for "left arrow" key press.
                     document.getElementById("pressed").innerHTML = "LEFT Pressed";
+                    left = true;
+                    console.log(left);
                     break;
+
                 case "ArrowRight":
                     // code for "right arrow" key press.
                     document.getElementById("pressed").innerHTML = "RIGHT Pressed";
+                    right = true;
+                    console.log(right);
                     break;
+
                 default:
-                    return; // Quit when this doesn't handle the key event.
+                    console.log("hi");
+                    up = false;
+                    down = false;
+                    left = false;
+                    right = false;
+                    console.log(up);
+                    break;
             }
 
             // Cancel the default action to avoid it being handled twice
             event.preventDefault();
-        }, true);
+        }, true); */
           // the last option dispatches the event to the listener first,
           // then dispatches event to window
     </script>
