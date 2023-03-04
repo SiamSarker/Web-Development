@@ -13,3 +13,21 @@ function dispalyuser(data) {
     }
 }
 
+function loadalbums(){
+    fetch('https://jsonplaceholder.typicode.com/albums') 
+    .then(res => res.json())
+    .then(albums => dispalyalbums(albums));
+}
+
+function dispalyalbums(albums) {
+    const t = document.getElementById('album-list');
+    for (const album of albums){
+        const td = document.createElement('tr');
+        td1.innerHTML = `
+        <td>${album.userId}</td>
+        <td>${album.id}</td>
+        <td>${album.title}</td>
+        `
+        t.appendChild(td);
+    }
+}
