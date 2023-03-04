@@ -23,10 +23,11 @@ function dispalyalbums(albums) {
     const t = document.getElementById('album-list');
     for (const album of albums){
         const td = document.createElement('tr');
-        td1.innerHTML = `
+        td.innerHTML = `<tr>
         <td>${album.userId}</td>
         <td>${album.id}</td>
         <td>${album.title}</td>
+        </tr>
         `
         t.appendChild(td);
     }
