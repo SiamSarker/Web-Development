@@ -1,0 +1,16 @@
+.country{
+    background-color: antiquewhite;
+    margin: 5px;
+    padding: 5px;
+    border: black;
+    border-radius: 2px;
+}
+
+#countryContainer{
+    display: grid;
+    grid-template-columns: 4fr 4fr;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    justify-items: stretch;
+    align-items: stretch;
+}
