@@ -7,7 +7,7 @@ const countryAll = () => {
 const printCoutryAll = countries => {
 
     const countryContainer = document.getElementById('countryContainer');
-    countries.forEach(country => {
+    countries.forEach(country => { 
         console.log(country);
         const countryDiv = document.createElement('div'); 
         countryDiv.classList.add('country');
