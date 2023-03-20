@@ -11,16 +11,26 @@ const singerStyle = {
 }
 
 function App() {
+  const Cricketers = [
+    {name: 'Sakib Al Hasan', pos: 'All-Rounder'},
+    {name: 'Liton Dash', pos: 'Wk & Batsman'},
+  ]
+
+  const Professors = [
+    {name: 'Salek', pos: 'Professor'},
+    {name: 'Hasan', pos: 'Lecturer'},
+  ]
+  
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <h1>JSX</h1>
 
-        <Cricketer name='Sakib Al Hasan' pos='All-Rounder'></Cricketer>
-        <Cricketer name='Liton Dash' pos='Wk & Batsman'></Cricketer>
+        {Cricketers.map(cricketer => <Cricketer name={cricketer.name} pos={cricketer.pos}></Cricketer>)}
 
-
+        {Professors.map(Pro => <Professor name={Pro.name} pos={Pro.pos}></Professor>)}
+        
         <div className="music">
           <p>Name: {number}</p>
           <p style={singerStyle}>Name: {singer.name} Job: {singer.job}</p>
@@ -39,10 +49,6 @@ function App() {
         >
           Learn React
         </a>
-
-        <Professor name='Dr Salek' pos='Professor'></Professor>
-        <Professor name='Abir Hossain' pos='Lecturer'></Professor>
-
       </header>
 
       
