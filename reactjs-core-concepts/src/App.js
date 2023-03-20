@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
 
 const number = 5555;
 const singer = {name: 'Dr. Mahfuz', job: 'Singer'}
@@ -28,6 +29,8 @@ function App() {
         <h1>JSX</h1>
 
         {Cricketers.map(cricketer => <Cricketer name={cricketer.name} pos={cricketer.pos}></Cricketer>)}
+
+        <Counter></Counter>
 
         {Professors.map(Pro => <Professor name={Pro.name} pos={Pro.pos}></Professor>)}
         
@@ -65,6 +68,22 @@ function Cricketer(props) {
     </div>
   )
 }
+
+function Counter() {
+  const [count, setCount] = useState(23);
+  console.log(count, setCount);
+  const Increase = () => setCount(count + 1);
+  const Decrease = () => setCount(count - 1);
+  return (
+    <div>
+      <h1>Count: {count}</h1>
+      <button onClick={Increase}>Increase</button>
+      <button onClick={Decrease}>Decrease</button>
+      
+    </div>
+  )
+}
+
 
 
 function Professor(props) {
