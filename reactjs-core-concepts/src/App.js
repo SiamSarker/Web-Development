@@ -16,9 +16,13 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <h1>JSX</h1>
-        <div className="container">
+
+        <Cricketer ></Cricketer>
+        <Cricketer></Cricketer>
+
+        {/* <div className="container">
           <h3>Hello Dude React. How are you?</h3>
-        </div>
+        </div> */}
 
         <div className="music">
           <p>Name: {number}</p>
@@ -39,8 +43,29 @@ function App() {
           Learn React
         </a>
       </header>
+
+      <Professor></Professor>
     </div>
   );
+}
+
+function Cricketer() {
+  return (
+    <div className="container">
+      <h1>Name: Sakib Al Hasan</h1>
+      <p>Profession: Cricketer</p>
+    </div>
+  )
+}
+
+
+function Professor() {
+  return (
+    <div className="container2">
+      <h1>Name: Dr. Chamchu</h1>
+      <p>Profession: Professor</p>
+    </div>
+  )
 }
 
 export default App;
