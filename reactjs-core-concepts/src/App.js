@@ -17,12 +17,9 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <h1>JSX</h1>
 
-        <Cricketer ></Cricketer>
-        <Cricketer></Cricketer>
+        <Cricketer name='Sakib Al Hasan' pos='All-Rounder'></Cricketer>
+        <Cricketer name='Liton Dash' pos='Wk & Batsman'></Cricketer>
 
-        {/* <div className="container">
-          <h3>Hello Dude React. How are you?</h3>
-        </div> */}
 
         <div className="music">
           <p>Name: {number}</p>
@@ -42,28 +39,34 @@ function App() {
         >
           Learn React
         </a>
+
+        <Professor name='Dr Salek' pos='Professor'></Professor>
+        <Professor name='Abir Hossain' pos='Lecturer'></Professor>
+
       </header>
 
-      <Professor></Professor>
+      
     </div>
   );
 }
 
-function Cricketer() {
+function Cricketer(props) {
+  console.log(props);
   return (
     <div className="container">
-      <h1>Name: Sakib Al Hasan</h1>
-      <p>Profession: Cricketer</p>
+      <h1>Name: {props.name}</h1>
+      <p>Profession: {props.pos}</p>
     </div>
   )
 }
 
 
-function Professor() {
+function Professor(props) {
+  // console.log(props);
   return (
     <div className="container2">
-      <h1>Name: Dr. Chamchu</h1>
-      <p>Profession: Professor</p>
+      <h1>Name: {props.name}</h1>
+      <p>Profession: {props.pos}</p>
     </div>
   )
 }
