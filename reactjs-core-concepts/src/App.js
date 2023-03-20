@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const number = 5555;
 const singer = {name: 'Dr. Mahfuz', job: 'Singer'}
@@ -28,6 +28,8 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <h1>JSX</h1>
 
+        <Users></Users>
+
         {Cricketers.map(cricketer => <Cricketer name={cricketer.name} pos={cricketer.pos}></Cricketer>)}
 
         <Counter></Counter>
@@ -53,14 +55,28 @@ function App() {
           Learn React
         </a>
       </header>
-
-      
     </div>
   );
 }
 
+function Users() {
+  const [users, setUsers] = useState([]);
+  useEffect(() => {
+    fetch('https://jsonplaceholder.typicode.com/users')
+    .then(res => res.json())
+    .then(data => setUsers(data));
+  
+  }, [])
+  
+  return(
+    <div>
+        {users.map(user => <div style={{border:'2px solid yellow', backgroundColor:'red', margin:'20px'}}><div>Name: {user.name}</div> <div>Email: {user.email}</div></div>)}
+
+    </div>
+  )
+}
+
 function Cricketer(props) {
-  console.log(props);
   return (
     <div className="container">
       <h1>Name: {props.name}</h1>
@@ -71,7 +87,6 @@ function Cricketer(props) {
 
 function Counter() {
   const [count, setCount] = useState(23);
-  console.log(count, setCount);
   const Increase = () => setCount(count + 1);
   const Decrease = () => setCount(count - 1);
   return (
@@ -79,11 +94,9 @@ function Counter() {
       <h1>Count: {count}</h1>
       <button onClick={Increase}>Increase</button>
       <button onClick={Decrease}>Decrease</button>
-      
     </div>
   )
 }
-
 
 
 function Professor(props) {
