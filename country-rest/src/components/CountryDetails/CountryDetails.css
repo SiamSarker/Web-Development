@@ -1,0 +1,11 @@
+.country-details{
+    background-color: yellow;
+    margin: 5px;
+    padding: 5px;
+    border: black;
+    border-radius: 2px;
+  }
+
+.country-details img{
+    width: 200px;
+}
