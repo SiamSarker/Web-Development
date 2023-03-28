@@ -13,14 +13,14 @@ const NavBar = () => {
         {id: 5, name: 'About', path: '/'},
     ]
     return (
-        <nav>
+        <nav className='bg-purple-200 w-full'>
+            <div onClick={() => setOpen(!open)} className="h-6 w-6 md:hidden">
             {
-                open ? <XMarkIcon onClick={() => setOpen(!open)} className="h-6 w-6"></XMarkIcon> 
-                : <Bars3Icon onClick={() => setOpen(!open)} className="h-6 w-6"></Bars3Icon>
+                open ? <XMarkIcon/> : <Bars3Icon/>
             }
+            </div>
             
-            <span>{open ? 'open' : 'close'}</span>
-            <ul className='md:flex justify-center'>
+            <ul className={`md:flex bg-purple-200 w-full justify-center absolute md:static duration-500 ease-in ${open ? 'top-6' : 'top-[-120px]'}`}>
             {
                 routes.map(route => <Link key={route.id} route={route}></Link>)
             }
